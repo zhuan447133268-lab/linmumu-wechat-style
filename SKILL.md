@@ -1,31 +1,33 @@
 ---
 name: linmumu-wechat-style
-description: 林木木风格公众号写作与排版技能。当用户要写公众号文章、公众号推文、做公众号排版，或提到"林木木风格"时使用本技能。内含双文体写作公式（工具文五段式/观点文六拍）、5段式排版组件库、写完从用户改稿提炼新规则的复盘迭代流程。Use this skill whenever writing or formatting WeChat Official Account (公众号) articles, on requests like 写公众号、公众号排版、林木木风格.
+description: 林木木风格公众号内容操作系统 v1.0。当用户要写公众号文章、公众号推文、做公众号排版、起标题、去 AI 味，或提到"林木木风格"时使用本技能。内含人设层、文章类型路由、组件库与成稿自检清单。Use this skill whenever writing or formatting WeChat Official Account articles, on requests like 写公众号、公众号排版、林木木风格.
 ---
 
-# 林木木公众号风格
+# 林木木内容操作系统 v1.0
 
 人设：**AI 落地实践者**——不是 AI 专家，是"正在 AI 时代帮普通人找到使用路径的人"。自嘲落在事（翻车现场、笨办法），不落身份；不自称"AI小白"，禁用"非技术背景"。
 
 ## 工作流 A：写新文章
 
-1. **判定文体**：工具文（工具/流程/干货）→ 五段式；观点文（争议/立场/行业思考）→ 六拍。结构公式读 `references/style-guide.md`
-2. **找真事**：开头锚点必须是真实事件——宁可毛边的真实，不要光滑的虚构。用户没给真事就先问，不编造
-3. **按公式组织成文**，遵守下方"红线速览"
-4. **写完自检**：每段大声读一遍，任何"像文章"的句子改成"像人话"；得意句删一遍；升维段检查是否落在具体小动作
+1. **判定文章类型**：工具实践文 / 观点文 / 成长复盘文（见 `references/style-guide.md`）。
+2. **按类型结构组织成文**，遵守下方"红线速览"。
+3. **按叙事段套用组件**（见 `references/layout-components.md`）。
+4. **语言自检**：每段大声读一遍，任何"像文章"的句子改成"像人话"；得意句删一遍；升维段检查是否落在具体小动作。
+5. **成稿审计**：用 `references/quality-checklist.md` 逐条自检，不通过就改。
 
 ## 工作流 B：排版
 
-1. 读 `references/layout-components.md`（3 条视觉铁律 + 5 组件详规）
-2. 把正文切成 5 类叙事段，按映射速查表套组件
-3. 只排版不改意；段落要短、手机屏友好；公众号编辑器粘贴**用表格布局不用 flex**
+1. 读 `references/layout-components.md`（3 条视觉铁律 + 文章类型路由 + 6 组件详规）。
+2. 先判定文章类型，再按类型映射识别叙事段。
+3. 套组件时遵守"组件使用纪律"：每篇 3–5 个、普通叙述不卡片化、emoji 不堆砌。
+4. 只排版不改意；段落要短、手机屏友好；公众号编辑器粘贴**用表格布局不用 flex**。
 
 ## 工作流 C：复盘迭代（每次用户定稿后必做）
 
-1. 对比"初稿 vs 用户定稿"，逐条列出改动
-2. 每条改动提炼成 before→after 规则（一句话规则 + 对照示例），追加到 `references/examples.md`（时间序，旧→新）
-3. 有普遍性的规则，同步提炼进 `references/style-guide.md` 最新增补节
-4. `git add -A && git commit && git push`（本目录即 git 仓库），并把新规则同步追加到 Obsidian 母本《方法库/公众号写作风格指南.md》末尾
+1. 对比"初稿 vs 用户定稿"，逐条列出改动。
+2. 每条改动提炼成 before→after 规则（一句话规则 + 对照示例），追加到 `references/examples.md`（时间序，旧→新）。
+3. 有普遍性的规则，同步提炼进 `references/style-guide.md` 最新增补节。
+4. `git add -A && git commit && git push`（本目录即 git 仓库），并把新规则同步追加到 Obsidian 母本《方法库/公众号写作风格指南.md》末尾。
 
 ## 红线速览（细节与实证见 references/）
 
@@ -39,9 +41,11 @@ description: 林木木风格公众号写作与排版技能。当用户要写公�
 - 业务术语降维成大白话；凡能定位真实业务的词一律再泛化一层
 - 自称用"不是搞AI算法出身的"；禁"AI小白 / 非技术背景"
 - 结尾语从备选池轮换，绝不连续重复
+- **组件使用纪律**：每篇 3–5 个视觉组件；普通叙述不强行卡片化；金句卡必须有观点变化和记忆点；表格只用于比较
 
 ## 参考文件
 
-- `references/style-guide.md` —— 写作风格全量规则（双文体公式 + 六拍结构 + 定位 + 历次增补）
-- `references/layout-components.md` —— 排版组件库（3 视觉铁律 + 5 组件详规 + 映射速查 + 排版 Agent Prompt）
+- `references/style-guide.md` —— 写作风格全量规则（人设 + 三类型公式 + 定位 + 历次增补）
+- `references/layout-components.md` —— 组件库（视觉铁律 + 文章类型路由 + 6 组件详规 + 组件使用纪律 + 排版 Agent Prompt）
+- `references/quality-checklist.md` —— 成稿自检清单（Agent 审计用）
 - `references/examples.md` —— 改稿实证案例库（before→after，按时间序生长）
